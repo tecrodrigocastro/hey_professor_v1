@@ -10,7 +10,7 @@ if [ $? -ne 0 ]; then
     echo "Opa! Parece que temos um problema com o phpstan. Verifique os erros e tente novamente.";
 
     exit 1;
-fi
+fi;
 
 
 # all files modified and formatted using pint
