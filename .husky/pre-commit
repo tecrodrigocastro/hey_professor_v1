@@ -13,6 +13,16 @@ if [ $? -ne 0 ]; then
 fi;
 
 
+# run test
+php artisan test --parallel
+
+if [ $? -ne 0 ]; then
+    echo "Opa! Parece que temos um problema com os testes. Verifique os erros e tente novamente.";
+
+    exit 1;
+fi;
+
+
 # all files modified and formatted using pint
 STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep  ".php\{0,1\}$") || true
 
